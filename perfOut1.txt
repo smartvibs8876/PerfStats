@@ -1,0 +1,19 @@
+out.json  perf.data  perf.data.old
+
+ Performance counter stats for 'ls':
+
+              5.08 msec task-clock                #    0.741 CPUs utilized
+                 0      context-switches          #    0.000 /sec
+                 0      cpu-migrations            #    0.000 /sec
+                90      page-faults               #   17.723 K/sec
+   <not supported>      cycles
+   <not supported>      instructions
+   <not supported>      branches
+   <not supported>      branch-misses
+
+       0.006855464 seconds time elapsed
+
+       0.003412000 seconds user
+       0.003412000 seconds sys
+
+
