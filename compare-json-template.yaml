@@ -1,0 +1,48 @@
+apiVersion: argoproj.io/v1alpha1
+kind: WorkflowTemplate
+metadata:
+  name: compare
+spec:
+  entrypoint: compare
+  arguments:
+      parameters:
+      - name: firstFile
+        value: "perfOut1.txt"
+      - name: secondFile
+        value: "perfOut2.txt"
+      - name: releaseVersionOne
+        value: "1"
+      - name: releaseVersionTwo
+        value: "1"
+      - name: firstJSONFile
+        value: "perfOut1-1.json"
+      - name: secondJSONFile
+        value: "perfOut2-1.json"
+
+  templates:
+  - name: compare
+    inputs:
+      parameters:
+      - name: firstFile
+      - name: secondFile
+      - name: releaseVersionOne
+      - name: releaseVersionTwo
+      - name: firstJSONFile
+      - name: secondJSONFile
+      artifacts:
+      - name: git-source
+        path: /src
+        git:
+          repo: https://github.com/smartvibs8876/PerfStats.git
+    script:
+      image: ubuntu
+      command: [bash]
+      source: |                                       
+        cd /src
+        ls -l
+        apt-get update -y
+        apt-get install python3 -y
+        python3 textToJSON.py {{inputs.parameters.firstFile}} {{inputs.parameters.releaseVersionOne}}
+        python3 textToJSON.py {{inputs.parameters.secondFile}} {{inputs.parameters.releaseVersionTwo}}
+        
+        ls -l
