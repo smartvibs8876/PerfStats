@@ -10,31 +10,35 @@ class TextToJSON:
     def readTextFile(self):
         file = open(self.inputTextFile, 'r')
         self.inputTextFileContents = file.readlines()
+        file.close()
 
     def convertToJSON(self):
         performanceDict = dict()
         self.readTextFile()
         substr = "seconds time elapsed"
-        #index = 0
         for line in self.inputTextFileContents:
             fields = line.split()
-            #index += 1
             if substr in line:
                 lineContents = line.split()
-                time = lineContents[0]
+                secondsIndex = fields.index("seconds")  
+                time = lineContents[secondsIndex-1]
                 performanceDict[substr] = time 
             try:
                 hashIndex = fields.index("#")
             except ValueError:
-                #print("# value doesnt exist for line :-",index)
                 continue
-            performanceDict[fields[hashIndex-1]] = fields[hashIndex+1] 
+            for character in fields[hashIndex+1]:
+                if character.isdigit() == True:
+                    performanceDict[fields[hashIndex-1]] = " ".join(fields[hashIndex+1:]) 
+                    break 
         JSONObject = json.dumps(performanceDict, indent = 4)
         with open(self.outputJSONFile, "w") as outputFile:
             outputFile.write(JSONObject)
 
-print(sys.argv[1],sys.argv[2])
-textToJSONInstnce = TextToJSON(sys.argv[1],"output1.json")
-textToJSONInstnce.convertToJSON()
-textToJSONInstnce = TextToJSON(sys.argv[2],"output2.json")
-textToJSONInstnce.convertToJSON()
+try:
+    inputFileName = sys.argv[1]
+    outputFileName = sys.argv[1].replace(".txt","")+"-"+sys.argv[2]+".json"
+    textToJSONInstnce = TextToJSON(inputFileName,outputFileName)
+    textToJSONInstnce.convertToJSON()
+except IndexError:
+    print("Invalid command line arguments")

@@ -1,0 +1,23 @@
+pkg-performance-chk-rnj2k-1609379298: 2022-06-21T10:08:08.005450210Z
+pkg-performance-chk-rnj2k-1609379298: 2022-06-21T10:08:08.005450210Z
+pkg-performance-chk-rnj2k-1609379298: 2022-06-21T10:08:08.005450210Z
+pkg-performance-chk-rnj2k-1609379298: 2022-06-21T10:08:08.005450210Z  Performance counter stats for 'python python/resnet50_tf.py ./dog.jpg 1000':
+pkg-performance-chk-rnj2k-1609379298: 2022-06-21T10:08:08.005450210Z
+pkg-performance-chk-rnj2k-1609379298: 2022-06-21T10:08:08.005450210Z         3205877.87 msec task-clock                #   35.235 CPUs utilized
+pkg-performance-chk-rnj2k-1609379298: 2022-06-21T10:08:08.005450210Z           13403217      context-switches          #    4.181 K/sec
+pkg-performance-chk-rnj2k-1609379298: 2022-06-21T10:08:08.005450210Z             230584      cpu-migrations            #   71.925 /sec
+pkg-performance-chk-rnj2k-1609379298: 2022-06-21T10:08:08.005450210Z             581625      page-faults               #  181.425 /sec
+pkg-performance-chk-rnj2k-1609379298: 2022-06-21T10:08:08.005450210Z     11385773517905      cycles                    #    3.552 GHz                      (33.33%)
+pkg-performance-chk-rnj2k-1609379298: 2022-06-21T10:08:08.005450210Z       941449983844      stalled-cycles-frontend   #    8.27% frontend cycles idle     (49.93%)
+pkg-performance-chk-rnj2k-1609379298: 2022-06-21T10:08:08.005450210Z # started on Tue Jun 21 10:06:36 2022
+pkg-performance-chk-rnj2k-1609379298: 2022-06-21T10:08:08.005450210Z      3721003185333      instructions              #    0.33  insn per cycle
+pkg-performance-chk-rnj2k-1609379298: 2022-06-21T10:08:08.005450210Z                                                   #    2.03  stalled cycles per insn  (33.38%)
+pkg-performance-chk-rnj2k-1609379298: 2022-06-21T10:08:08.005450210Z       226115626479      branches                  #   70.532 M/sec                    (50.07%)
+pkg-performance-chk-rnj2k-1609379298: 2022-06-21T10:08:08.005450210Z         6813716194      branch-misses             #    3.01% of all branches          (16.63%)
+pkg-performance-chk-rnj2k-1609379298: 2022-06-21T10:08:08.005450210Z
+pkg-performance-chk-rnj2k-1609379298: 2022-06-21T10:08:08.005450210Z       90.986509446 seconds time elapsed
+pkg-performance-chk-rnj2k-1609379298: 2022-06-21T10:08:08.005450210Z
+pkg-performance-chk-rnj2k-1609379298: 2022-06-21T10:08:08.005450210Z     2956.714263000 seconds user
+pkg-performance-chk-rnj2k-1609379298: 2022-06-21T10:08:08.005450210Z      224.924612000 seconds sys
+pkg-performance-chk-rnj2k-1609379298: 2022-06-21T10:08:08.005450210Z
+pkg-performance-chk-rnj2k-1609379298: 2022-06-21T10:08:08.005450210Z      7549645349804      stalled-cycles-backend    #   66.31% backend cycles
