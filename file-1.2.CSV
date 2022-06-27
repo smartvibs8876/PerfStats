@@ -1,0 +1,2 @@
+package,task-clock,context-switches,cpu-migrations,page-faults,cycles,stalled-cycles-frontend,instructions,2022-06-21T10:08:08.005450210Z,branches,branch-misses,seconds time elapsed,stalled-cycles-backend
+file,35.235 CPUs utilized,4.181 K/sec,71.925 /sec,181.425 /sec,3.552 GHz (33.33%),8.27% frontend cycles idle (49.93%),0.33 insn per cycle,2.03 stalled cycles per insn (33.38%),70.532 M/sec (50.07%),3.01% of all branches (16.63%),90.986509446,66.31% backend cycles
